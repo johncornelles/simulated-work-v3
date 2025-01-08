@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">rock paper scissor</a>
-      <a href="/whack a mole/mole.html">Whack a mole</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
+<head>
+  <title>Rock Paper Scissors</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <main>
+    
+    <h1>Rock Paper Scissors</h1>
+    <div id="score">
+      <p>Player Score: <span id="player-score">0</span></p>
+      <p>Computer Score: <span id="computer-score">0</span></p>
+    </div>
+    <div class="choices">
+      <button class="choice">Rock</button>
+      <button class="choice">Paper</button>
+      <button class="choice">Scissors</button>
+    </div>
+    <p id="result"></p>
+    <button id="reset" class="resetButton">Reset</button>
+  </main>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
+</body>
 </html>
