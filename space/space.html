@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Invaders</title>
+    <link rel="stylesheet" href="space.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1 class="results">0</h1>
+    <div class="grid"></div>
+    <script>
+        fetch('../../navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+          });
+      </script>
+    <script src="space.js"></script>
+</body>
+</html>
